@@ -1,0 +1,366 @@
+/* FONT START */
+/* POPPINS START */
+@font-face{
+    font-family: poppinsBold;
+    src: url(fonts/poppins/Poppins-Bold.otf);
+  }
+  @font-face{
+    font-family: poppinsLight;
+    src: url(fonts/poppins/Poppins-Light.otf);
+  }
+  @font-face{
+    font-family: poppinsExtraBold;
+    src: url(fonts/poppins/Poppins-ExtraBold.otf);
+  }
+  @font-face{
+    font-family: poppinsMedium;
+    src: url(fonts/poppins/Poppins-Medium.otf);
+  }
+  @font-face{
+    font-family: poppinsRegular;
+    src: url(fonts/poppins/Poppins-Regular.otf);
+  }
+  @font-face{
+    font-family: poppinsSemiBold;
+    src: url(fonts/poppins/Poppins-SemiBold.otf);
+  }
+  @font-face{
+    font-family: poppinsThin;
+    src: url(fonts/poppins/Poppins-Thin.otf);
+  }
+  /* POPPINS END */
+  
+  /* SIX-CAPS START */
+  @font-face {
+    font-family: sixCaps;
+    src: url(fonts/six_caps/SixCaps.ttf);
+  }
+  /* SIX-CAPS END */
+  
+  
+  /* FONT END */
+  
+  /* COLOR START */
+  :root{
+    --whiteColor : #f7f7f7;
+    --phthaloGreen : #132F26;
+    --blackColor : #151110;
+    --grayColor : #c7c8ca;
+    --blackCoral : #707477;
+    --philippineGray : #8B8E91; 
+    --royalOrange : #FF914D;
+    --pureWhiteColor : #fff;
+    --lavenderBlush: #FBF0F2;
+  }
+  /* COLOR END */
+  
+  /* ALL STYLE START */
+  *, 
+  *::after, 
+  *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: var(--blackColor);
+    font-family: poppinsRegular;
+  }
+  
+  ::selection{
+    background-color: rgba(225, 255, 255, 0.1);
+  }
+  /* ALL STYLE END */
+  
+  /* PRELOADER ANIMATION START */
+  #preloader{
+    width: 100%;
+    height: 100vh;
+    background: #000 url(preloader/loader_animation.gif) no-repeat center center;
+    background-size: 20%;
+    position: fixed;
+    z-index: 99999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+  }
+  #preloader.fade-out{
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* PRELOADER ANIMATION END */
+  
+  
+  /* CURSOR ANIMATION START */
+  .circle{
+    --circle-size: 40px;
+    position: fixed;
+    z-index: 99;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid var(--whiteColor);
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+  }
+  .cursor{
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+    padding: 0.3rem;
+    background-color: var(--whiteColor);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+    top: 0;
+    left: 0;
+  }
+  span{
+    display: inline-block;
+    font-weight: 300;
+    pointer-events: none;
+    transition: transform 0.1s linear;
+  }
+  .hover{
+    transition: all 0.3s ease;
+  }
+  .hover:hover ~ .cursor{
+    transform: translate(-50%,-50%) scale(6);
+  }
+  /* CURSOR ANIMATION END */
+  
+  
+  /* Nav start */
+  header{
+    position: fixed;
+    padding: 5px 100px;
+    z-index: 99;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.6s;
+  }
+  header.sticky{
+    padding: 5px 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+  
+  }
+  header nav{
+    max-width: 1166px;
+    margin: 0 auto;
+    padding: 2vh 0vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav .logo{
+    color: var(--whiteColor);
+    font-family: sixCaps;
+    font-size: 3vw;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.6s;
+    letter-spacing: 0.5vw;
+  }
+  .logo img{
+    width: 8vw;
+  }
+  header ul{
+    display: flex;
+    align-items: center;
+  }
+  header nav li{
+    list-style: none;
+    padding: 0.5vw 1.5vw;
+    transition: 0.3s ease-in;
+  }
+  header nav li a{
+    font-size: 1.2vw;
+    text-decoration: none;
+    color: var(--whiteColor);
+    font-family: "Francois One";
+    text-transform: uppercase;
+    transition: 0.2s;
+  }
+  /* Nav end */
+  
+  /* ABOUT START */
+  
+.about-section{
+    background: url(img/background_img/tegalalang_ridge_walk.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: var(--whiteColor);
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: var(--whiteColor);
+    padding: 150px;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 1.5vw;
+    color: #545454;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+
+.message-btn{
+    display: inline-block;
+    border: 1px solid var(--pureWhiteColor);
+    padding: 14px 18px;
+    text-transform: uppercase;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--pureWhiteColor);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 30px;
+    background-color: var(--royalOrange);
+    margin-top: 2vh;
+    cursor: pointer;
+  }
+  .message-btn:hover {
+    background: var(--pureWhiteColor);
+    color: var(--royalOrange);
+    border: 1px solid var(--royalOrange);
+  }
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+}
+  /* ABOUT END */
+  
+  /* FOOTER IMG SECTION START */
+  .img-footer-section{
+    width: 100%;
+    height: auto;
+    background-color: var(--whiteColor);
+  }
+  .img-footer-section h1{
+    font-family: "salsa";
+    font-size: 3vw;
+    margin-bottom: -20px;
+    color: var(--phthaloGreen);
+    text-align: center;
+  }
+  .img-footer-section img{
+    width: 100%;
+    background-position: center;
+  }
+  /* FOOTER IMG SECTION END */
+  
+  /* FOOTER START */
+  .footer-section{
+    padding: 7vh 7vw;
+    width: 100%;
+    height: auto;
+    margin-top: -10px;
+    color: var(--pureWhiteColor);
+    background-color: var(--phthaloGreen);
+  }
+  .footer-img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh;
+  }
+  .footer-img img{
+    width: 50%;
+    height: auto;
+  }
+  .footer-top{
+    display: flex;
+    gap: 2.5vw;
+    justify-content: center;
+  }
+  .footer-top h2{
+    font-size: 1.2vw;
+    margin-bottom: 3vh;
+  }
+  .footer-top a{
+    text-decoration: none;
+    line-height: 6vh;
+    font-size: 1.2vw;
+    color: var(--whiteColor);
+  }
+  .footer-top a:hover{
+    color: var(--blackCoral);
+  }
+  .footer-items1{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+  .footer-items1 img{
+    width: 8vw;
+    margin-bottom: 3vh;
+  }
+  .footer-items1 h1{
+    margin-bottom: 3vh;
+  }
+  .footer-items1 h2{
+    font-size: 1.5vw;
+  }
+  .footer-icon i{
+    margin-top: 5vh;
+    font-size: 1.5vw;
+    margin-right: 1vw;
+  }
+  .footer-icon i:hover{
+    transform: scale(1.5);
+  }
+  .footer-items2{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+  .footer-items2 h2{
+    font-size: 1.5vw;
+  }
+  .footer-p p{
+    font-size: 1.2vw;
+    line-height: 6vh;
+  }
+  .footer-p i{
+    margin-right: 1vw;
+  }
+  .footer-bottom{
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    font-size: 1.2vw;
+  }
+  /* FOOTER END */
